@@ -17,6 +17,16 @@
                 url: "/about",
                 templateUrl: "app/pages/about/about.html",
                 controller: "AboutController as vm"
+            })
+            .state("walls", {
+                url: "/walls",
+                templateUrl: "app/pages/walls/walls.html",
+                controller: "WallsController as vm"
+            })
+            .state("newsfeed", {
+                url: "/news",
+                templateUrl: "app/pages/newsfeed/newsfeed.html",
+                controller: "NewsFeedController as vm"
             });
 
         $urlRouterProvider.otherwise('/')

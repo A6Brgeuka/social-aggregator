@@ -5,7 +5,10 @@
         .module("superApp")
         .config(config);
 
-    config.$inject = [];
+    config.$inject = ["localStorageServiceProvider"];
 
-    function config(){}
+    function config(localStorageServiceProvider){
+        localStorageServiceProvider
+            .setPrefix('superApp');
+    }
 })();

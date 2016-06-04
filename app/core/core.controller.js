@@ -1,12 +1,12 @@
-(function () {
-    angular.module("superApp.core")
-        .controller("CoreController", coreController);
 
-    coreController.$inject = [];
 
-    function coreController() {
-        var vm = this;
 
-        vm.test = "test";
+class coreController {
+    constructor(localStorageService, $state){
     }
-})();
+}
+
+coreController.$inject = [];
+
+angular.module("superApp.core")
+    .controller("CoreController", coreController);
