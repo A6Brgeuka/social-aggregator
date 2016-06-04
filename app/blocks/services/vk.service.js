@@ -7,7 +7,7 @@ class vkApi{
         this.localStorageService = localStorageService;
     }
     
-    signInVk(){
+    signIn(){
         return this.$q((resolve, reject) => {
             VK.Auth.login(res => {
                 debugger;

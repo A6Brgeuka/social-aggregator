@@ -1,9 +1,13 @@
 
 class homeController {
-    constructor(localStorageService, $state, vkApi){
+    constructor(localStorageService, $state, vkApi, faceBookApi){
         this.localStorageService = localStorageService;
         this.$state = $state;
         this.vkApi = vkApi;
+        this.faceBookApi = faceBookApi;
+
+        this.localStorageService.remove("vk-session");
+        this.localStorageService.remove("facebook-session");
         // this.checkAnySession();
     }
     /*checkAnySession(){
@@ -15,15 +19,13 @@ class homeController {
         }
     }*/
     signInVk(){
-        const vkSession = this.localStorageService.get("any-session");
+        const vkSession = this.localStorageService.get("vk-session");
 
-        debugger;
         if(vkSession){
             return this.$state.go("walls");
         }
-        debugger;
         this.vkApi
-            .signInVk()
+            .signIn()
             .then(() => {
                 debugger;
                 this.$state.go("walls");
@@ -31,11 +33,26 @@ class homeController {
             .catch(() => {
                 debugger;
             });
-            
+    }
+    signInFaceBook(){
+        const faceBookSession = this.localStorageService.get("facebook-session");
+
+        if(faceBookSession){
+            return this.$state.go("walls");
+        }
+        this.faceBookApi
+            .signIn()
+            .then(() => {
+                debugger;
+                this.$state.go("walls");
+            })
+            .catch(() => {
+                debugger;
+            });
     }
 }
 
-homeController.$inject = ["localStorageService", "$state", "vkApi"];
+homeController.$inject = ["localStorageService", "$state", "vkApi", "faceBookApi"];
 
 angular.module('superApp.home')
     .controller('HomeController', homeController);
