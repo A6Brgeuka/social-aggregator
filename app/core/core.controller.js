@@ -1,5 +1,5 @@
 (function () {
-    angular.module("TestApp.core")
+    angular.module("superApp.core")
         .controller("CoreController", coreController);
 
     coreController.$inject = [];

@@ -9,5 +9,5 @@ class AboutController {
 AboutController.$inject = ["$scope"];
 
 
-angular.module("TestApp.about")
+angular.module("superApp.about")
     .controller("AboutController", AboutController);

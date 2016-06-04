@@ -1,8 +1,8 @@
 (function () {
-    angular.module("TestApp", [
-        "TestApp.core",
+    angular.module("superApp", [
+        "superApp.core",
         //pages
-        "TestApp.home",
-        "TestApp.about",
+        "superApp.home",
+        "superApp.about",
     ]);
 })();

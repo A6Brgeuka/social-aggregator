@@ -4,17 +4,17 @@ class homeController {
         this.vkApi = vkApi;
     }
     signInVk(){
-        this.vkApi.signIn()
-            .then(res => {
+        this.vkApi.signIn();
+            /*.then(res => {
                 debugger;
             })
             .catch(err => {
                 debugger;
-            })
+            })*/
     }
 }
 
 homeController.$inject = ["vkApi"];
 
-angular.module('TestApp.home')
+angular.module('superApp.home')
     .controller('HomeController', homeController);

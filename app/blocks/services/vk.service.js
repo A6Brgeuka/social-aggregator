@@ -6,10 +6,19 @@ class vkApi{
     }
     
     signIn(){
-        debugger;
-        return this.$http({
-            url: "https://oauth.vk.com/authorize",
-            method: "GET",
+        VK.Auth.login(res => {
+            debugger;
+
+            /*VK.Api.call('wall.get', {
+                owner_id: 15541715,
+                domain: "a6brgeuka",
+                count: 5
+            }, (res) => {
+                debugger;
+            })*/
+        }, +2+4+8+16+8192+1024+262144);
+        // return this.$http.get("");
+        /*return this.$http.get("https://oauth.vk.com/authorize", {
             params: {
                 client_id: this.vkConfig.client_id,
                 redirect_uri: "http://localhost:3000",
@@ -18,7 +27,7 @@ class vkApi{
                 response_type: "code",
                 v: "5.52"
             }
-        });
+        });*/
     }
 
     getWalls() {

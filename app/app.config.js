@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module("TestApp")
+        .module("superApp")
         .config(config);
 
     config.$inject = [];

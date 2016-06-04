@@ -1,8 +1,10 @@
 (function() {
-    angular.module("TestApp.core", [
+    angular.module("superApp.core", [
         //angular native modules + third party modules
         //..
         //cross-app module
-        "TestApp.blocks"
+        "superApp.blocks",
+        "LocalStorageModule",
+        
     ]);
 })();

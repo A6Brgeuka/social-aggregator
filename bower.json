@@ -21,6 +21,7 @@
     "moment": "^2.13.0",
     "lodash": "^4.13.1",
     "bootstrap": "^3.3.6",
-    "jquery": "^2.2.4"
+    "jquery": "^2.2.4",
+    "angular-local-storage": "^0.2.7"
   }
 }

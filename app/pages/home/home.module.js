@@ -1,3 +1,3 @@
 (function () {
-    angular.module("TestApp.home", []);
+    angular.module("superApp.home", []);
 })();
