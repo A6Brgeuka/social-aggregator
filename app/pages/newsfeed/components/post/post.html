@@ -1,0 +1,12 @@
+<div ng-if="vm.post.profile">
+    <h5>{{vm.post.profile.first_name}} {{vm.post.profile.last_name}}</h5>
+    <h6 ng-bind-html="vm.post.text"></h6>
+    <hr>
+
+</div>
+
+<div ng-if="vm.post.group">
+    <h6 ng-bind-html="vm.post.text"></h6>
+    <hr>
+
+</div>

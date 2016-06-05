@@ -25,7 +25,7 @@
             })
             .state("newsfeed", {
                 url: "/news",
-                templateUrl: "app/pages/newsfeed/newsfeed.html",
+                templateUrl: "app/pages/newsfeed/newfeed/newsfeed.html",
                 controller: "NewsFeedController as vm"
             });
 

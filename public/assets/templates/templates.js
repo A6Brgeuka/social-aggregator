@@ -1,4 +1,5 @@
 angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("pages/about/about.html","<h1>About</h1>\r\n<hr>\r\n");
 $templateCache.put("pages/home/home.html","<h1>Login using your social network account</h1>\r\n<hr>\r\n\r\n<button type=\"button\" class=\"btn btn-primary\"\r\n        ng-click=\"vm.signInVk()\">\r\n    Vk\r\n</button>\r\n\r\n<button type=\"button\" class=\"btn btn-primary\"\r\n        ng-click=\"vm.signInFaceBook()\">\r\n    Facebook\r\n</button>");
-$templateCache.put("pages/newsfeed/newsfeed.html","<h1>News</h1>\r\n<hr>");
-$templateCache.put("pages/walls/walls.html","<h1>Walls</h1>\r\n<hr>");}]);
+$templateCache.put("pages/walls/walls.html","<h1>Walls</h1>\r\n<hr>");
+$templateCache.put("pages/newsfeed/newfeed/newsfeed.html","<h1>News</h1>\r\n<hr>\r\n\r\n<div ng-repeat=\"post in vm.filtedNewsFeeds\">\r\n    <div ng-if=\"post.type == \'post\'\">\r\n        <news-feed post=\"post\"></news-feed>\r\n    </div>\r\n\r\n</div>");
+$templateCache.put("pages/newsfeed/components/post/post.html","<div ng-if=\"vm.post.profile\">\r\n    <h5>{{vm.post.profile.first_name}} {{vm.post.profile.last_name}}</h5>\r\n    <h6 ng-bind-html=\"vm.post.text\"></h6>\r\n    <hr>\r\n\r\n</div>\r\n\r\n<div ng-if=\"vm.post.group\">\r\n    <h6 ng-bind-html=\"vm.post.text\"></h6>\r\n    <hr>\r\n\r\n</div>");}]);

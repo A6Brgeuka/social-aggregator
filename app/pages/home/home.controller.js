@@ -6,29 +6,22 @@ class homeController {
         this.vkApi = vkApi;
         this.faceBookApi = faceBookApi;
 
-        this.localStorageService.remove("vk-session");
-        this.localStorageService.remove("facebook-session");
-        // this.checkAnySession();
+        // this.localStorageService.remove("vk-session");
+        // this.localStorageService.remove("facebook-session");
     }
-    /*checkAnySession(){
-        const anySession = this.localStorageService.get("any-session");
-        debugger;
-        if(anySession){
-            debugger;
-            this.$state.go("walls");
-        }
-    }*/
+
     signInVk(){
         const vkSession = this.localStorageService.get("vk-session");
 
         if(vkSession){
-            return this.$state.go("walls");
+            return this.$state.go("newsfeed");
         }
+        debugger;
+
         this.vkApi
             .signIn()
             .then(() => {
-                debugger;
-                this.$state.go("walls");
+                this.$state.go("newsfeed");
             })
             .catch(() => {
                 debugger;
@@ -43,7 +36,6 @@ class homeController {
         this.faceBookApi
             .signIn()
             .then(() => {
-                debugger;
                 this.$state.go("walls");
             })
             .catch(() => {
