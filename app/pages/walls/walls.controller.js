@@ -1,12 +1,12 @@
 
 class wallsController {
-    constructor(vkApi){
+    constructor(localStorageService, vkApi){
         this.vkApi = vkApi;
+        this.localStorageService = localStorageService;
     }
-    
 }
 
-wallsController.$inject = ["vkApi"];
+wallsController.$inject = ["localStorageService", "vkApi"];
 
 angular.module('superApp.walls')
     .controller('WallsController', wallsController);

@@ -8,8 +8,12 @@
         <script src="/bower_components/lodash/lodash.js"></script>
         <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
         <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="/bower_components/angular-aria/angular-aria.js"></script>
+        <script src="/bower_components/angular-animate/angular-animate.js"></script>
+        <script src="/bower_components/angular-material/angular-material.js"></script>
 
         <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
 
         <meta name="name" content="content" charset="utf-8">
 
@@ -28,32 +32,24 @@
         <!-- endinject -->
 
         <script src="//vk.com/js/api/openapi.js" type="text/javascript"></script>
+        <script src="//connect.facebook.net/en_US/sdk.js" type="text/javascript"></script>
 
     </head>
 
     <body ng-controller="CoreController as cc" class="container">
 
-    <script type="text/javascript">
-        VK.init({
-            apiId: 5491307
-        });
-    </script>
-        <script>
-            window.fbAsyncInit = function() {
-                FB.init({
-                    appId      : '1217251498315559',
-                    xfbml      : true,
-                    version    : 'v2.6'
-                });
-            };
+        <script type="text/javascript">
+            VK.init({
+                apiId: 5491307
+            });
+        </script>
 
-            (function(d, s, id){
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {return;}
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
+        <script>
+        FB.init({
+            appId      : '1217251498315559',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
         </script>
 
         <!--<div

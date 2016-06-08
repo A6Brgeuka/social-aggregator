@@ -5,6 +5,6 @@
         //cross-app module
         "superApp.blocks",
         "LocalStorageModule",
-        
+        "ngMaterial",
     ]);
 })();

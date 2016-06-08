@@ -13,11 +13,11 @@ class homeController {
     signInVk(){
         const vkSession = this.localStorageService.get("vk-session");
 
+        debugger;
         if(vkSession){
             return this.$state.go("newsfeed");
         }
-        debugger;
-
+        
         this.vkApi
             .signIn()
             .then(() => {
@@ -30,13 +30,15 @@ class homeController {
     signInFaceBook(){
         const faceBookSession = this.localStorageService.get("facebook-session");
 
+        debugger;
         if(faceBookSession){
-            return this.$state.go("walls");
+            debugger;
+            return this.$state.go("newsfeed");
         }
         this.faceBookApi
             .signIn()
             .then(() => {
-                this.$state.go("walls");
+                this.$state.go("newsfeed");
             })
             .catch(() => {
                 debugger;

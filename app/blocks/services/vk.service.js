@@ -12,12 +12,15 @@ class vkApi{
         debugger;
         return this.$q((resolve, reject) => {
             VK.Auth.getLoginStatus(response => {
+                debugger;
                 if(response.session){
+                    debugger;
                     this.localStorageService.set('vk-session', response.session);
                     this.localStorageService.set('any-session', true);
                     resolve();
                 } else {
                     VK.Auth.login(res => {
+                        debugger;
                         if(res.session){
                             this.localStorageService.set('vk-session', res.session);
                             this.localStorageService.set('any-session', true);

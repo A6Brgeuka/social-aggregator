@@ -2,8 +2,7 @@
 <hr>
 
 <div ng-repeat="post in vm.filtedNewsFeeds">
-    <div ng-if="post.type == 'post'">
-        <news-feed post="post"></news-feed>
+    <div>
+        <dir-news-feed post="post"></dir-news-feed>
     </div>
-
 </div>

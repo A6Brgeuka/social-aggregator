@@ -22,25 +22,22 @@ class faceBookApi{
                     } else {
                         reject();
                     }
-                }, {scope: "email,user_likes"});
+                }, {scope: "user_about_me,public_profile,user_friends,user_posts,user_photos,user_actions.news,user_actions.video,user_likes,email,publish_actions,publish_pages,user_status"})
             });
-
-
-            //public_profile,user_friends," +
-           // "user_posts,user_photos,user_actions.news" +
-           // "user_actions.video,user_likes,email
         });
     }
 
     getNewsFeed(){
         const deferred = this.$q.defer();
 
-
-        VK.Api.call('newsfeed.get', {
-
-        }, (res) => {
-            debugger;
-            deferred.resolve(res.response);
+        const session = this.localStorageService.get('facebook-session');
+        const a = `/${session.userID}/feed/`;
+        debugger;
+        return this.$q((resolve, reject) => {
+            FB.api('/me', (res) => {
+                debugger;
+                deferred.resolve(res.response);
+            });
         });
     }
 

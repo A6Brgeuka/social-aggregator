@@ -23,6 +23,7 @@
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.4",
     "angular-local-storage": "^0.2.7",
-    "angular-sanitize": "^1.5.6"
+    "angular-sanitize": "^1.5.6",
+    "angular-material": "^1.0.9"
   }
 }

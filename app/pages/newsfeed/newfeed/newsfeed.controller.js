@@ -4,7 +4,8 @@ class newsFeedController {
         this.vkApi = vkApi;
         this.faceBookApi = faceBookApi;
         this.getVkNewsFeed();
-        this.getFaceBookNewsFeed();
+        //this.getFaceBookNewsFeed();
+        debugger;
     }
     
     getVkNewsFeed(){
@@ -13,6 +14,7 @@ class newsFeedController {
             .then((res) => {
                 this.filterNewsFeed(res);
                 this.vkNewsFeed = res;
+                debugger;
                 console.log(this.vkNewsFeed);
             })
             .catch((err) => {
@@ -21,7 +23,14 @@ class newsFeedController {
     }
 
     getFaceBookNewsFeed(){
-
+        this.faceBookApi
+            .getNewsFeed()
+            .then(res => {
+                
+            })
+            .catch(err => {
+                
+            });
     }
 
     filterNewsFeed(vkNewsFeed){
