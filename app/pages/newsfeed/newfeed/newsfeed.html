@@ -1,8 +1,10 @@
 <h1>News</h1>
 <hr>
 
-<div ng-repeat="post in vm.filtedNewsFeeds">
-    <div>
-        <dir-news-feed post="post"></dir-news-feed>
+<div ng-if="vm.vkNewsFeed">
+    <div ng-repeat="post in vm.sortedNewsFeeds">
+        <div>
+            <sorting-vk-posts post="post"></sorting-vk-posts>
+        </div>
     </div>
 </div>

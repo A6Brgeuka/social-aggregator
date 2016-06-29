@@ -1,6 +1,5 @@
 class postNewFeedComponent {
     constructor(){
-        console.log(this);
     }
 }
 
@@ -11,12 +10,10 @@ const options = {
     bindings: {
         post: '<'
     },
-    templateUrl(){
-        return "app/pages/newsfeed/components/post/post.html";
-    },
+    templateUrl: "app/pages/newsfeed/components/vk/post/post.html",
     controller: postNewFeedComponent,
     controllerAs: "vm"
 };
 
-angular.module("newsfeed.components")
-    .component("newsFeed", options);
+angular.module("components.vkNewsFeed")
+    .component("vkPost", options);

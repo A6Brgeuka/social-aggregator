@@ -3,19 +3,20 @@ class newsFeedController {
     constructor(vkApi, faceBookApi){
         this.vkApi = vkApi;
         this.faceBookApi = faceBookApi;
-        this.getVkNewsFeed();
         //this.getFaceBookNewsFeed();
-        debugger;
+        this.vkNewsFeed = {
+            items: [],
+        };
+        this.getVkNewsFeed();
     }
     
     getVkNewsFeed(){
+
         this.vkApi
             .getNewsFeed()
             .then((res) => {
-                this.filterNewsFeed(res);
                 this.vkNewsFeed = res;
-                debugger;
-                console.log(this.vkNewsFeed);
+                this.filterNewsFeed(res);
             })
             .catch((err) => {
                 debugger;
@@ -29,32 +30,54 @@ class newsFeedController {
                 
             })
             .catch(err => {
-                
+                debugger;
             });
     }
 
     filterNewsFeed(vkNewsFeed){
-        this.vkNewsFeed = vkNewsFeed;
+        this.sortedNewsFeeds = [];
 
-        this.filtedNewsFeeds = [];
-
-        this.vkNewsFeed.items.forEach(newsFeed => {
+        vkNewsFeed.items.forEach(newsFeed => {
             if(newsFeed.source_id < 0){
-                this.vkNewsFeed.groups.forEach(group => {
+                vkNewsFeed.groups.forEach(group => {
                     if(group.gid == (Math.abs(newsFeed.source_id))){
-                        let news = newsFeed;
-                        news.group = group;
-                        this.filtedNewsFeeds.push(news);
+                        const news = {
+                            news: newsFeed,
+                            owner: group,
+                        };
+
+                        this.sortedNewsFeeds.push(news);
                     }
-                })
+                });
             } else {
-                this.vkNewsFeed.profiles.forEach(profile => {
+                vkNewsFeed.profiles.forEach(profile => {
                     if(profile.uid == newsFeed.source_id){
-                        let news = newsFeed;
-                        news.profile = profile;
-                        this.filtedNewsFeeds.push(news);
+                        const news = {
+                            news: newsFeed,
+                            owner: profile,
+                        };
+
+                        this.sortedNewsFeeds.push(news);
                     }
-                })
+                });
+            }
+        });
+
+        this.sortedNewsFeeds.forEach(sortedNewsFeed => {
+            if(sortedNewsFeed.news.copy_owner_id && sortedNewsFeed.news.post_type == "copy"){
+                if(sortedNewsFeed.news.copy_owner_id < 0){
+                    vkNewsFeed.groups.forEach(group => {
+                        if(group.gid == (Math.abs(sortedNewsFeed.news.copy_owner_id))){
+                            sortedNewsFeed.repost_owner = group;
+                        }
+                    })
+                } else {
+                    vkNewsFeed.profiles.forEach(profile => {
+                        if(profile.uid == newsFeed.source_id){
+                            sortedNewsFeed.repost_owner = profile;
+                        }
+                    });
+                }
             }
         });
     }
