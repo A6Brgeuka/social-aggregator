@@ -10,34 +10,43 @@ class vkApi{
     
     signIn(){
         debugger;
-        return this.$q((resolve, reject) => {
-            VK.Auth.getLoginStatus(response => {
-                debugger;
-                if(response.session){
-                    this.localStorageService.set('vk-session', response.session);
-                    this.localStorageService.set('any-session', true);
-                    resolve();
-                } else {
-                    VK.Auth.login(res => {
-                        if(res.session){
-                            this.localStorageService.set('vk-session', res.session);
-                            this.localStorageService.set('any-session', true);
-                            resolve();
-                        } else {
-                            reject();
-                        }
-                    }, +2+4+8+16+8192+1024+262144);
-                }
-            })
-        });
+        try {
+            return this.$q((resolve, reject) => {
+                VK.Auth.getLoginStatus(response => {
+                    if(response.session){
+                        this.localStorageService.set('vk-session', response.session);
+                        this.localStorageService.set('any-session', true);
+                        resolve();
+                    } else {
+                        VK.Auth.login(res => {
+                            if(res.session){
+                                this.localStorageService.set('vk-session', res.session);
+                                this.localStorageService.set('any-session', true);
+                                resolve();
+                            } else {
+                                reject(res);
+                            }
+                        }, +2+4+8+16+8192+1024+262144);
+                    }
+                })
+            });
+        } catch (err) {
+            console.error("vk is't available");
+            console.error(err);
+        }
     }
 
     getNewsFeed(){
-        return this.$q((resolve, reject) => {
-            VK.Api.call('newsfeed.get', {}, res => {
-                resolve(res.response);
+        try {
+            return this.$q((resolve, reject) => {
+                VK.Api.call('newsfeed.get', {}, res => {
+                    resolve(res.response);
+                });
             });
-        });
+        } catch (err) {
+            console.error("vk is't available");
+            console.error(err);
+        }
     }
 
     getWalls() {
