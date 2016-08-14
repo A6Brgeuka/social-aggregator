@@ -10,7 +10,7 @@ const options = {
     bindings: {
         post: '<'
     },
-    templateUrl:"app/pages/newsfeed/components/vk/copy-vk-post/copy-vk-post.html",
+    templateUrl:"app/pages/newsfeed/components/vk/copy-vk-post/template.html",
     controller: copyPostVkComponent,
     controllerAs: "vm"
 };

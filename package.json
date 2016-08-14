@@ -1,12 +1,19 @@
 {
   "name": "angular-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "social-aggregator",
+  "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/A6Brgeuka/social-aggregator"
+  },
+  "bugs": {
+    "url": "https://github.com/A6Brgeuka/social-aggregator/issues"
+  },
+  "author": "https://github.com/A6Brgeuka",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.9.0",

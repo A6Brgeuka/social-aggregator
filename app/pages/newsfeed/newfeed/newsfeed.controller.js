@@ -15,8 +15,9 @@ class newsFeedController {
         this.vkApi
             .getNewsFeed()
             .then((res) => {
+                debugger;
                 this.vkNewsFeed = res;
-                this.filterNewsFeed(res);
+                this.filterVKNewsFeed(res);
             })
             .catch((err) => {
                 debugger;
@@ -34,10 +35,11 @@ class newsFeedController {
             });
     }
 
-    filterNewsFeed(vkNewsFeed){
+    filterVKNewsFeed(vkNewsFeed){
         this.sortedNewsFeeds = [];
 
         vkNewsFeed.items.forEach(newsFeed => {
+            console.log(newsFeed);
             if(newsFeed.source_id < 0){
                 vkNewsFeed.groups.forEach(group => {
                     if(group.gid == (Math.abs(newsFeed.source_id))){

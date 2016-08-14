@@ -1,0 +1,24 @@
+<div>
+    <div ng-if="vm.post.owner.name">
+        <group-vk-post post="vm.post">
+            <div ng-if="vm.post.news.post_type=='post'">
+                <vk-post post="vm.post"></vk-post>
+            </div>
+
+            <div ng-if="vm.post.news.post_type=='copy'">
+                <copy-vk-post post="vm.post"></copy-vk-post>
+            </div>
+        </group-vk-post>
+    </div>
+    <div ng-if="vm.post.owner.first_name && vm.post.owner.last_name">
+        <profile-vk-post post="vm.post">
+            <div ng-if="vm.post.news.post_type=='post'">
+                <vk-post post="vm.post"></vk-post>
+            </div>
+
+            <div ng-if="vm.post.news.post_type=='copy'">
+                <copy-vk-post post="vm.post"></copy-vk-post>
+            </div>
+        </profile-vk-post>
+    </div>
+</div>

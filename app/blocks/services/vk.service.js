@@ -1,5 +1,5 @@
 
-class vkApi{
+class vkApi {
     constructor($http, $q, $timeout, VK_CONFIG, localStorageService){
         this.$http = $http;
         this.$q = $q;
@@ -7,9 +7,12 @@ class vkApi{
         this.localStorageService = localStorageService;
         this.$timeout = $timeout;
     }
+
+    setSettings(settings){
+        VK.init(settings);
+    }
     
     signIn(){
-        debugger;
         try {
             return this.$q((resolve, reject) => {
                 VK.Auth.getLoginStatus(response => {
@@ -39,7 +42,10 @@ class vkApi{
     getNewsFeed(){
         try {
             return this.$q((resolve, reject) => {
-                VK.Api.call('newsfeed.get', {}, res => {
+                VK.Api.call('newsfeed.get', {
+                    return_banned: 0,
+                    count: 10
+                }, res => {
                     resolve(res.response);
                 });
             });

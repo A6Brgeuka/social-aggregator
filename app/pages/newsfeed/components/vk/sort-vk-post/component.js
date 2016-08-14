@@ -10,7 +10,7 @@ const options = {
     bindings: {
         post: '<'
     },
-    templateUrl:"app/pages/newsfeed/components/vk/sort-vk-post/sort-vk-post.html",
+    templateUrl:"app/pages/newsfeed/components/vk/sort-vk-post/template.html",
     controller: sortingPostsVkComponent,
     controllerAs: "vm"
 };

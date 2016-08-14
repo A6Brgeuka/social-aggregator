@@ -1,17 +1,24 @@
-
 class faceBookApi{
     constructor($http, $q, VK_CONFIG, localStorageService){
+        this.checkVK();
         this.$http = $http;
         this.$q = $q;
         this.vkConfig = VK_CONFIG;
         this.localStorageService = localStorageService;
     }
 
+    checkVK(){
+        if(typeof VK === "undefined")
+            throw new Error("You forgot include VK script");
+    }
+
+    setSettings(settings){
+        FB.init(settings);
+    }
+
     signIn(){
-        debugger;
         return this.$q((resolve, reject) => {
             FB.getLoginStatus((response) => {
-                debugger;
                 FB.login(res => {
                     debugger;
                     if(res.authResponse){
