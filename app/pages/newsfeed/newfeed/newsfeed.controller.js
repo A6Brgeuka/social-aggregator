@@ -15,8 +15,8 @@ class newsFeedController {
         this.vkApi
             .getNewsFeed()
             .then((res) => {
-                debugger;
                 this.vkNewsFeed = res;
+                debugger;
                 this.filterVKNewsFeed(res);
             })
             .catch((err) => {
@@ -75,7 +75,7 @@ class newsFeedController {
                     })
                 } else {
                     vkNewsFeed.profiles.forEach(profile => {
-                        if(profile.uid == newsFeed.source_id){
+                        if(profile.uid == sortedNewsFeed.source_id){
                             sortedNewsFeed.repost_owner = profile;
                         }
                     });

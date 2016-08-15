@@ -4,6 +4,11 @@
             client_id: 5491307,
             client_secret: "Vu5BCaTcdNi8nL4McyA9"
         })
+        .constant('FB_CONFIG', {
+            appId      : '1217251498315559',
+            xfbml      : true,
+            version    : 'v2.6'
+        })
         .constant('BASE_API', {
             URL: "http://localhost:3000",
             PORT: "3000",

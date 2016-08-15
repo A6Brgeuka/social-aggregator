@@ -36,22 +36,43 @@
 
     </head>
 
-    <body ng-controller="CoreController as cc" class="container">
+    <body layout="column" layout-fill ng-cloak ng-controller="CoreController as cc" >
 
-        <script>
-            FB.init({
-                appId      : '1217251498315559',
-                xfbml      : true,
-                version    : 'v2.6'
-            });
-        </script>
+        <!--<div ng-cloak>-->
+            <!--<md-content>-->
+                <!--<br>-->
+                <!--<md-toolbar>-->
+                    <!--<div class="md-toolbar-tools">-->
+                        <!--<md-button aria-label="Home" ui-sref="home">-->
+                            <!--Social Aggregator-->
+                        <!--</md-button>-->
+                        <!--<md-button class="md-raised" aria-label="Home" ui-sref="home">-->
+                            <!--Home-->
+                        <!--</md-button>-->
 
-        <!--<div
-                class="fb-like"
-                data-share="true"
-                data-width="450"
-                data-show-faces="true">
-        </div>-->
+                        <!--<md-button class="md-raised" aria-label="About" ui-sref="about">-->
+                            <!--About-->
+                        <!--</md-button>-->
+
+                        <!--<md-input-container>-->
+                            <!--<label>Items</label>-->
+                            <!--<md-select ng-model="cc.selectedItem" md-selected-text="cc.getSelectedText()">-->
+                                <!--{{vm.items}}-->
+                                <!--{{items}}-->
+                                <!--<md-optgroup label="items">-->
+                                    <!--<md-option ng-value="item" ng-repeat="item in cc.items">Item {{item}}</md-option>-->
+                                <!--</md-optgroup>-->
+                            <!--</md-select>-->
+                        <!--</md-input-container>-->
+
+                        <!--<span flex></span>-->
+                        <!--<md-button class="md-raised" aria-label="Learn More">-->
+                            <!--Learn More-->
+                        <!--</md-button>-->
+                    <!--</div>-->
+                <!--</md-toolbar>-->
+            <!--</md-content>-->
+        <!--</div>-->
 
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -63,7 +84,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Asd</a>
+                    <a class="navbar-brand" href="#">Social Aggregator</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,7 +93,7 @@
                         <li class="active"><a ui-sref="home">Home <span class="sr-only">(current)</span></a></li>
                         <li><a ui-sref="about">About</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
@@ -109,15 +130,12 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <div ui-view></div>
+        <md-content flex class="md-padding content-none-padding main-content">
+            <div ui-view flex ></div>
+        </md-content>
 
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js" ></script>
-        <script>
-            $(".nav a").on("click", function(){
-                $(".nav").find(".active").removeClass("active");
-                $(this).parent().addClass("active");
-            });
-        </script>
+        <script src="vendor/nav/nav.js"></script>
     </body>
 </html>
