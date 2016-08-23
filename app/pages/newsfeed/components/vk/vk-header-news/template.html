@@ -1,0 +1,9 @@
+<div ng-if="!vm.post.isGroup">
+    <vk-person-header-news post="vm.post">
+    </vk-person-header-news>
+</div>
+
+<div ng-if="vm.post.isGroup">
+    <vk-group-header-news post="vm.post">
+    </vk-group-header-news>
+</div>

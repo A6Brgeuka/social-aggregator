@@ -46,6 +46,7 @@ class vkApi {
                     return_banned: 0,
                     count: 10
                 }, res => {
+                    console.log(res.response)
                     resolve(res.response);
                 });
             });

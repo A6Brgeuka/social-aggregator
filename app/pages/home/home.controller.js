@@ -44,6 +44,10 @@ class homeController {
                 debugger;
             });
     }
+
+    signInTwitter(){
+        
+    }
 }
 
 homeController.$inject = ["localStorageService", "$state", "vkApi", "faceBookApi"];

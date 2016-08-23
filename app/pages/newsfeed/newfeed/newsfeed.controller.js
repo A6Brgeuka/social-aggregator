@@ -16,7 +16,6 @@ class newsFeedController {
             .getNewsFeed()
             .then((res) => {
                 this.vkNewsFeed = res;
-                debugger;
                 this.filterVKNewsFeed(res);
             })
             .catch((err) => {
@@ -39,13 +38,13 @@ class newsFeedController {
         this.sortedNewsFeeds = [];
 
         vkNewsFeed.items.forEach(newsFeed => {
-            console.log(newsFeed);
             if(newsFeed.source_id < 0){
                 vkNewsFeed.groups.forEach(group => {
                     if(group.gid == (Math.abs(newsFeed.source_id))){
                         const news = {
                             news: newsFeed,
                             owner: group,
+                            isGroup: true
                         };
 
                         this.sortedNewsFeeds.push(news);
@@ -57,6 +56,7 @@ class newsFeedController {
                         const news = {
                             news: newsFeed,
                             owner: profile,
+                            isGroup: false
                         };
 
                         this.sortedNewsFeeds.push(news);
@@ -82,6 +82,7 @@ class newsFeedController {
                 }
             }
         });
+        console.log(this.sortedNewsFeeds);
     }
 }
 

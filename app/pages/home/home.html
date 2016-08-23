@@ -1,20 +1,27 @@
 <h1>Login using your social network account</h1>
 <hr>
 
-<style>
-    .toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
-        color: white; }
-</style>
+<md-card flex style="margin: auto">
+    <style>
+        .toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+            color: white; }
+    </style>
 
-<md-button type="button" class="md-raised md-primary md-ink-ripple"
-        ng-click="vm.signInVk()">
-    Vk
-</md-button>
+    <md-button type="button" class="md-raised md-primary md-ink-ripple"
+               ng-click="vm.signInVk()">
+        Vk
+    </md-button>
 
-<md-button type="button" class="md-raised md-primary"
-        ng-click="vm.signInFaceBook()">
-    Facebook
-</md-button>
+    <md-button type="button" class="md-raised md-primary"
+               ng-click="vm.signInFaceBook()">
+        Facebook
+    </md-button>
+
+    <md-button type="button" class="md-raised md-primary"
+               ng-click="vm.signInTwitter()">
+        Twitter
+    </md-button>
+</md-card>
 
 
 
