@@ -9,21 +9,8 @@
             <hr>
 
             <div ng-if="vm.vkNewsFeed">
-                <div>
-                    <md-card ng-repeat="post in vm.sortedNewsFeeds">
-                        <vk-header-news post="post"></vk-header-news>
-
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">md-card-title-text</span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-content>
-                            <p>
-                                md-card-content p
-                            </p>
-                        </md-card-content>
-                    </md-card>
+                <div ng-repeat="post in vm.sortedNewsFeeds">
+                    <vk-post post="post"></vk-post>
                 </div>
             </div>
         </md-content>

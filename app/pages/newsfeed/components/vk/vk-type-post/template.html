@@ -1,0 +1,16 @@
+<div>
+    <div ng-if="vm.showAll">
+        <p ng-bind-html="vm.post.news.text">
+        </p>
+    </div>
+    <div ng-if="!vm.showAll">
+        <p ng-bind-html="vm.text">
+        </p>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="vm.showAllText()">Show all</md-button>
+        </md-card-actions>
+    </div>
+    <div ng-if="vm.post.news.attachments.length">
+        <vk-attachments attachments="vm.post.news.attachments"></vk-attachments>
+    </div>
+</div>

@@ -44,9 +44,8 @@ class vkApi {
             return this.$q((resolve, reject) => {
                 VK.Api.call('newsfeed.get', {
                     return_banned: 0,
-                    count: 10
+                    count: this.vkConfig.news_feed.count
                 }, res => {
-                    console.log(res.response)
                     resolve(res.response);
                 });
             });

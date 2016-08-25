@@ -15,6 +15,7 @@ class newsFeedController {
         this.vkApi
             .getNewsFeed()
             .then((res) => {
+                console.log(res);
                 this.vkNewsFeed = res;
                 this.filterVKNewsFeed(res);
             })

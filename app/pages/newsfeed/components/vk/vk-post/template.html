@@ -1,5 +1,13 @@
-<md-content class="md-padding" layout-xs="column" layout="row">
-    <md-card>
-        post
-    </md-card>
-</md-content>
+<md-card>
+    <vk-header-news post="vm.post"></vk-header-news>
+
+    <md-card-content>
+        <div ng-if="!vm.post.news.post_type || vm.post.news.post_type=='post'" flex>
+            <vk-post-type-post post="vm.post"></vk-post-type-post>
+        </div>
+
+        <div ng-if="vm.post.news.post_type=='copy'" flex>
+            copy == {{vm.post.news.post_type}}
+        </div>
+    </md-card-content>
+</md-card>

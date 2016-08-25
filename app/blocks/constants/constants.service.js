@@ -2,7 +2,10 @@
     angular.module("blocks.constants")
         .constant('VK_CONFIG', {
             client_id: 5491307,
-            client_secret: "Vu5BCaTcdNi8nL4McyA9"
+            client_secret: "Vu5BCaTcdNi8nL4McyA9",
+            news_feed: {
+                count: 50
+            }
         })
         .constant('FB_CONFIG', {
             appId      : '1217251498315559',
