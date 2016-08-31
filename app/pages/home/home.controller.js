@@ -13,7 +13,6 @@ class homeController {
     signInVk(){
         const vkSession = this.localStorageService.get("vk-session");
 
-        debugger;
         if(vkSession){
             return this.$state.go("newsfeed");
         }
@@ -30,7 +29,6 @@ class homeController {
     signInFaceBook(){
         const faceBookSession = this.localStorageService.get("facebook-session");
 
-        debugger;
         if(faceBookSession){
             debugger;
             return this.$state.go("newsfeed");

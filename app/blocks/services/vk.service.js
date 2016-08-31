@@ -11,6 +11,14 @@ class vkApi {
     setSettings(settings){
         VK.init(settings);
     }
+
+    // test(){
+    //    VK.Api.call('users.get', {
+    //        user_ids: 163459265,
+    //    }, (res) => {
+    //        debugger;
+    //    });
+    // }
     
     signIn(){
         try {

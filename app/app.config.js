@@ -3,8 +3,10 @@
 
     angular
         .module("superApp")
-        .run(["vkApi", "faceBookApi", "VK_CONFIG", "FB_CONFIG", run])
+        .run(run)
         .config(config);
+
+    run.$inject = ["vkApi", "faceBookApi", "VK_CONFIG", "FB_CONFIG"];
 
     config.$inject = ["localStorageServiceProvider", "$mdThemingProvider", "$mdIconProvider"];
 

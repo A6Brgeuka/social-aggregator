@@ -3,7 +3,7 @@
         <img src={{vm.post.owner.photo_medium_rec}}>
     </md-card-avatar>
     <md-card-header-text>
-        <span class="md-title">{{vm.post.owner.first_name}}</span>
+        <span class="md-title"><a ng-click="vm.gotoVkProfile()">{{vm.post.owner.first_name}}</a></span>
         <span class="md-subhead">{{vm.post.owner.last_name}}</span>
     </md-card-header-text>
 </md-card-header>
