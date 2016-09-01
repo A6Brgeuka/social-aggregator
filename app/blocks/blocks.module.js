@@ -4,5 +4,6 @@
     "blocks.constants",
     "blocks.helpers",
     "blocks.router",
+    "blocks.filters"
   ]);
 })();

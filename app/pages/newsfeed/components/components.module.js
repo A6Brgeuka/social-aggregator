@@ -1,5 +1,6 @@
 (function () {
     angular.module("newsfeed.components", [
-        'components.vkNewsFeed'
+      'ngSanitize',
+      'components.vkNewsFeed'
     ]);
 })();

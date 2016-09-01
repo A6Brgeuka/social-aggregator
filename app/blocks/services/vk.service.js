@@ -73,6 +73,17 @@ class vkApi {
          })
     }
 
+    getUsersInfo(ids){
+        const user_ids = ids.join(',');
+        return this.$q((resolve, reject) => {
+            VK.Api.call('users.get', {
+                user_ids
+            }, res => {
+                resolve(res.response);
+            });
+        });
+    }
+
     static vkApiSelfFactory($http,$q, $timeout, VK_CONFIG, localStorageService){
         return new vkApi($http, $q, $timeout, VK_CONFIG, localStorageService);
     }

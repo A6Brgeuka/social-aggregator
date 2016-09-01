@@ -2,25 +2,32 @@
     <div ng-if="vm.post.news.type=='post'">
         <vk-type-post post="vm.post"></vk-type-post>
     </div>
-    <div ng-if="vm.post.news.type=='photo'">
 
-    </div>
-    <div ng-if="vm.post.news.type=='photo_tag'">
-
-    </div>
     <div ng-if="vm.post.news.type=='wall_photo'">
-
+        <vk-type-wall-photo post="vm.post"></vk-type-wall-photo>
     </div>
+
+    <div ng-if="vm.post.news.type=='photo'">
+        photo
+    </div>
+
+    <div ng-if="vm.post.news.type=='photo_tag'">
+        photo_tag
+    </div>
+
     <div ng-if="vm.post.news.type=='friend'">
-
+        <vk-type-friend post="vm.post"></vk-type-friend>
     </div>
+
     <div ng-if="vm.post.news.type=='note'">
-
+        note
     </div>
+
     <div ng-if="vm.post.news.type=='audio'">
-
+        <vk-type-audio post="vm.post"></vk-type-audio>
     </div>
-    <div ng-if="vm.post.news.type=='video'">
 
+    <div ng-if="vm.post.news.type=='video'">
+        video
     </div>
 </div>

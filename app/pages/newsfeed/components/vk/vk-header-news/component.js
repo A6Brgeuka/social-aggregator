@@ -1,6 +1,5 @@
 class vkHeaderNews {
 	constructor(){
-		
 	}
 }
 

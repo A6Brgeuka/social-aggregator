@@ -3,6 +3,7 @@
         <img src={{vm.post.owner.photo_medium}}>
     </md-card-avatar>
     <md-card-header-text>
-        <span class="md-title">{{vm.post.owner.name}}</span>
+        <span class="md-title"><a ng-click="vm.gotoVkProfile()">{{vm.post.owner.name}}</a></span>
+        <span class="md-subhead">{{vm.post.news.date | FormatToStandartDate}}</span>
     </md-card-header-text>
 </md-card-header>

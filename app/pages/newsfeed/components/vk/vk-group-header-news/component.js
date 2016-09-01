@@ -1,9 +1,15 @@
 class vkGroupHeaderNews {
-	constructor(){
+	constructor($window){
+		this.$window = $window;
+	}
+
+	gotoVkProfile(){
+		// href="https://vk.com/{{vm.post.owner.screen_name}}"
+		this.$window.open(`https://vk.com/${this.post.owner.screen_name}`, '_blank');
 	}
 }
 
-vkGroupHeaderNews.$inject = [];
+vkGroupHeaderNews.$inject = ["$window"];
 
 const options = {
 	restrict: "EA",

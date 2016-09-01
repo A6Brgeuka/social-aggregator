@@ -1,0 +1,10 @@
+<div flex="" ng-if="vm.users">
+    <span ng-if="vm.post.owner.sex == '1'">Добавилa</span>
+    <span ng-if="vm.post.owner.sex == '2'">Добавил</span>
+    в друзья
+    <span ng-repeat="friend in vm.users">
+        <a href="https://vk.com/id{{friend.uid}}" target="_blank">
+            {{friend.fullName}}
+        </a>
+    </span>
+</div>

@@ -6,8 +6,8 @@
     <div ng-if="!vm.showAll">
         <p ng-bind-html="vm.text">
         </p>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="vm.showAllText()">Show all</md-button>
+        <md-card-actions layout="row" layout-align="start end">
+            <md-button ng-click="vm.showAllText()" class="text-show-all">Show all</md-button>
         </md-card-actions>
     </div>
 
@@ -24,6 +24,22 @@
                     {{vm.post.news.likes.count}}
                 </span>
                 <i class="material-icons custom-favorite-icon">&#xE87D;</i>
+            </div>
+        </md-button>
+        <md-button class="md-icon-button custom-favorite-button" aria-label="Settings">
+            <div>
+                <span>
+                    {{vm.post.news.comments.count}}
+                </span>
+                <i class="material-icons custom-favorite-icon">&#xE0B9;</i>
+            </div>
+        </md-button>
+        <md-button class="md-icon-button custom-favorite-button" aria-label="Settings">
+            <div>
+                <span>
+                    {{vm.post.news.reposts.count}}
+                </span>
+                <i class="material-icons custom-favorite-icon">&#xE0E2;</i>
             </div>
         </md-button>
         <md-button class="md-icon-button custom-favorite-button" aria-label="Settings">

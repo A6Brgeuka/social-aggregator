@@ -1,0 +1,6 @@
+<div flex="">
+    <div ng-repeat="audio in vm.audios">
+        <span>{{audio.artist}} - {{audio.title}}</span>
+        <audio ng-src={{vm.trustSrc(audio.url)}} controls></audio>
+    </div>
+</div>
