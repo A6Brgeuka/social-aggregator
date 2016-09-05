@@ -3,12 +3,12 @@
         <div flex="70">
             <img src={{vm.firstPhoto.src_big}} alt="">
         </div>
-        <div flex="30" layout="row">
-                <div ng-repeat="photo in vm.photos" flex="50">
-                    <div>
-                        <img src={{photo.src}} alt="" width="150" height="100">
-                    </div>
+        <div flex="30" layout="row" style="overflow-x: auto; max-width: 100%">
+            <div ng-repeat="photo in vm.photos" flex="50">
+                <div>
+                    <img src={{photo.src}} alt="" width="150" height="100">
                 </div>
+            </div>
         </div>
     </div>
 </div>
