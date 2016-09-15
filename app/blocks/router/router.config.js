@@ -30,6 +30,11 @@
                 url: "/news",
                 templateUrl: "app/pages/newsfeed/newfeed/newsfeed.html",
                 controller: "NewsFeedController as vm"
+            })
+            .state("likes", {
+                url: "/likes",
+                templateUrl: "app/pages/search-likes/vk/search-like.html",
+                controller: "SearchLikesController as vm"
             });
 
         $urlRouterProvider.otherwise('/')

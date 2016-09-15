@@ -12,13 +12,14 @@ class vkApi {
         VK.init(settings);
     }
 
-    // test(){
-    //    VK.Api.call('users.get', {
-    //        user_ids: 163459265,
-    //    }, (res) => {
-    //        debugger;
-    //    });
-    // }
+    /*test(){
+       VK.Api.call('likes.getList', {
+           type: 'photo',
+           item_id: 1
+       }, (res) => {
+           debugger;
+       });
+    }*/
     
     signIn(){
         try {
@@ -78,6 +79,16 @@ class vkApi {
         return this.$q((resolve, reject) => {
             VK.Api.call('users.get', {
                 user_ids
+            }, res => {
+                resolve(res.response);
+            });
+        });
+    }
+
+    getFriends(){
+        return this.$q((resolve, reject) => {
+            VK.Api.call('friends.get', {
+                count: 10
             }, res => {
                 resolve(res.response);
             });

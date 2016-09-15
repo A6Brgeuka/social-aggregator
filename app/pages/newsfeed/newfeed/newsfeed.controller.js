@@ -10,9 +10,9 @@ class newsFeedController {
         this.getVkNewsFeed();
     }
     
-    // test(){
-    //     this.vkApi.test();
-    // }
+   /* test(){
+        this.vkApi.test();
+    }*/
     
     getVkNewsFeed(){
 
